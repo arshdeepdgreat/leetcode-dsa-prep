@@ -2,7 +2,6 @@ class Solution {
 public:
     int subset(int n,vector<int>nums,int sum)  {
         int dp[n+1][sum+1];
-        if(n==0)return(sum==0);
         for(int i=0;i<n+1;i++){
             dp[i][0]=1;
         }
