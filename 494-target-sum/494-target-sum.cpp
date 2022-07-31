@@ -1,7 +1,6 @@
 class Solution {
 public:
-    int subset(vector<int>nums,int sum)  {
-        int n=nums.size();
+    int subset(int n,vector<int>nums,int sum)  {
         int dp[n+1][sum+1];
         for(int i=0;i<=n;i++)
             dp[i][0]=1;
@@ -21,9 +20,13 @@ public:
     int findTargetSumWays(vector<int>& nums, int target) {
         int s=0;
         for(auto i:nums)s+=i;
+        
+        if (s<target)return 0;
+        
         int p=(target+s)/2;
-        if(s < target || (s + target) % 2 != 0)
+        if((s + target) % 2 != 0)
             return 0;
-        return subset(nums,abs(p));   
+        int n=nums.size();
+        return subset(n,nums,abs(p));   
     }
 };
