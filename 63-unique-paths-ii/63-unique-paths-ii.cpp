@@ -3,7 +3,7 @@ public:
     int uniquePathsWithObstacles(vector<vector<int>>& arr) {
        
         vector<vector<long long int>>dp(arr.size(),vector<long long int>(arr[0].size(),-1));
-        if(arr[arr.size()-1][arr[0].size()-1])
+        if(arr[arr.size()-1][arr[0].size()-1] ==1 || arr[0][0]==1)
         {
             return 0;
         }
