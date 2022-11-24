@@ -1,4 +1,5 @@
 class Solution {
+    
 public:
     int subset(int n,vector<int>nums,int sum)  {
         int dp[n+1][sum+1];
